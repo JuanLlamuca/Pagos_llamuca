@@ -74,10 +74,9 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="51dp"
-            android:layout_marginEnd="68dp"
-            android:layout_marginRight="68dp"
-            android:text="@string/txtETitulo"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="134dp"
+            android:layout_marginRight="134dp"
             android:textColor="#009688"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -97,6 +96,24 @@
             android:layout_marginRight="238dp"
             android:layout_marginBottom="601dp"
             android:text="Funcionario:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtECedula2"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="141dp"
+            android:layout_marginLeft="141dp"
+            android:layout_marginEnd="114dp"
+            android:layout_marginRight="114dp"
+            android:layout_marginBottom="675dp"
+            android:text="Formulario:"
             android:textSize="20sp"
             android:textStyle="bold" />
 
