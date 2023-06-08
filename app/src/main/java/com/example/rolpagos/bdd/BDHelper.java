@@ -1,10 +1,12 @@
 package com.example.rolpagos.bdd;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class BDHelper extends AppCompatActivity {
+public class BDHelper extends SQLiteOpenHelper {
 
     public BDHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -30,4 +32,3 @@ public class BDHelper extends AppCompatActivity {
     }
 }
 
-}

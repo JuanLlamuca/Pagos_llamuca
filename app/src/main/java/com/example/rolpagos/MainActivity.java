@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.example.rolpagos.bdd.BDHelper;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends  AppCompatActivity {
 
     EditText fo_funcionario, fo_cargo, fo_area, fo_hijo,fo_estado, fo_extras,fo_retraso,fo_total;
     @Override
