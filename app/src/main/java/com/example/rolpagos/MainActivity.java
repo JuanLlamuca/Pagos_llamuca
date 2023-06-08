@@ -14,6 +14,11 @@ import com.example.rolpagos.bdd.BDHelper;
 public class MainActivity extends  AppCompatActivity {
 
     EditText fo_funcionario, fo_cargo, fo_area, fo_hijo,fo_estado, fo_extras,fo_retraso,fo_total;
+
+    int extra=Integer.parseInt(fo_extras.getText().toString());
+    String retraso=fo_retraso.getText().toString();
+    double total=Double.parseDouble(fo_total.getText().toString());
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +59,12 @@ public class MainActivity extends  AppCompatActivity {
             Toast.makeText(this,"FAVOR INGRESAR TODOS LOS CAMPOS",Toast.LENGTH_SHORT).show();
         }
 
+
+
+
+
     }
+
+
 
 }
