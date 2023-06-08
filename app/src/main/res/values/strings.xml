@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">RolPAgos</string>
+    <string name="txt_funcionario"></string>
+    <string name="txt_cargo"></string>
+    <string name="txt_area"></string>
+    <string name="txt_hijos"></string>
+    <string name="txt_estado"></string>
+    <string name="txt_retraso"></string>
+    <string name="txt_extras"></string>
+    <string name="txt_total"></string>
 </resources>

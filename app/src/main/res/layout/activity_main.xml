@@ -6,15 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -32,8 +23,8 @@
             android:layout_marginRight="3dp"
             android:ems="10"
             android:inputType="text"
-            android:text="@string/txtDireccion"
-            tools:text="@string/txtDireccion" />
+            android:text="@string/txt_total"
+            tools:text="@string/txt_total" />
 
         <EditText
             android:id="@+id/txt_retrasos"
@@ -48,8 +39,8 @@
             android:layout_marginRight="6dp"
             android:ems="10"
             android:inputType="text"
-            android:text="@string/txtDireccion"
-            tools:text="@string/txtDireccion" />
+            android:text="@string/txt_retraso"
+            tools:text="@string/txt_retraso" />
 
         <EditText
             android:id="@+id/txt_horas"
@@ -63,8 +54,8 @@
             android:layout_marginRight="5dp"
             android:ems="10"
             android:inputType="text"
-            android:text="@string/txtDireccion"
-            tools:text="@string/txtDireccion" />
+            android:text="@string/txt_extras"
+            tools:text="@string/txt_extras" />
 
         <TextView
             android:id="@+id/txtETitulo"
@@ -128,7 +119,7 @@
             android:layout_marginEnd="9dp"
             android:layout_marginRight="9dp"
             android:ems="10"
-            android:text="@string/txtCedula" />
+            android:text="@string/txt_funcionario" />
 
         <TextView
             android:id="@+id/textView3"
@@ -156,8 +147,8 @@
             android:layout_marginRight="10dp"
             android:ems="10"
             android:inputType="text"
-            android:text="@string/txtNombre"
-            tools:text="@string/txtNombre" />
+            android:text="@string/txt_cargo"
+            tools:text="@string/txt_cargo" />
 
         <TextView
             android:id="@+id/txtEApellido"
@@ -256,11 +247,11 @@
             android:layout_marginRight="11dp"
             android:ems="10"
             android:inputType="text"
-            android:text="@string/txtApellidos"
-            tools:text="@string/txtApellidos" />
+            android:text="@string/txt_area"
+            tools:text="@string/txt_area" />
 
         <EditText
-            android:id="@+id/txt_nroHijos"
+            android:id="@+id/txt_hijos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -271,11 +262,11 @@
             android:layout_marginRight="11dp"
             android:ems="10"
             android:inputType="text"
-            android:text="@string/txtDireccion"
-            tools:text="@string/txtDireccion" />
+            android:text="@string/txt_hijos"
+            tools:text="@string/txt_hijos" />
 
         <EditText
-            android:id="@+id/txt_estadoCivil"
+            android:id="@+id/txt_estado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -286,18 +277,18 @@
             android:layout_marginRight="7dp"
             android:ems="10"
             android:inputType="text"
-            android:text="@string/txtDireccion"
-            tools:text="@string/txtDireccion" />
+            android:text="@string/txt_estado"
+            tools:text="@string/txt_estado" />
 
         <Button
-            android:id="@+id/btnCrear"
+            android:id="@+id/btn_ingresar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="127dp"
             android:onClick="registrar"
-            android:text="CREAR"
+            android:text="Guardar"
             app:rippleColor="@color/black" />
     </RelativeLayout>
 
