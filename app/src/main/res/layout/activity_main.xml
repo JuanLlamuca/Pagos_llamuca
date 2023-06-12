@@ -22,6 +22,8 @@
             android:layout_marginEnd="3dp"
             android:layout_marginRight="3dp"
             android:ems="10"
+            android:enabled="false"
+            android:focusable="false"
             android:inputType="text"
             android:text="@string/txt_total"
             tools:text="@string/txt_total" />
@@ -276,6 +278,7 @@
             android:layout_marginEnd="7dp"
             android:layout_marginRight="7dp"
             android:ems="10"
+            android:enabled="false"
             android:inputType="text"
             android:text="@string/txt_estado"
             tools:text="@string/txt_estado" />

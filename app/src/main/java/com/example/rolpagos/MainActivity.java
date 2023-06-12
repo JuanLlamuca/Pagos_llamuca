@@ -35,15 +35,6 @@ public class MainActivity extends  AppCompatActivity {
         double sueldo=0.00;
         //String cargo=et_cargo.getText().toString();
         if (cargo.equals("Administrativo")==true) {
-            if(retraso.equals("no")==true){
-                if(hijo==0){
-                    if(extras==0)
-                    sueldo=880.00;
-                }
-
-            }
-
-        }else if(cargo.equals("Docente")==true) {
             if (retraso.equals("si") == true) {
                 if (hijo > 0) {
                     if (extras > 0) {
@@ -51,6 +42,28 @@ public class MainActivity extends  AppCompatActivity {
                     }
                 }
 
+            }else if(retraso.equals("no")==true){
+                if (hijo > 0) {
+                    if (extras > 0) {
+                        sueldo = 880.00 + (50 * hijo) + (12 * extras);
+                    }
+                }
+            }
+
+        }else if(cargo.equals("Docente")==true) {
+            if (retraso.equals("si") == true) {
+                if (hijo > 0) {
+                    if (extras > 0) {
+                        sueldo = (1000.0 - 0.8) + (50 * hijo) + (12 * extras);
+                    }
+                }
+
+            }else if(retraso.equals("no")==true){
+                if (hijo > 0) {
+                    if (extras > 0) {
+                        sueldo = 1000.0 + (50 * hijo) + (12 * extras);
+                    }
+                }
             }
         }
         return sueldo;
