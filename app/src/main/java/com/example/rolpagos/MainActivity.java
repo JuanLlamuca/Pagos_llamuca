@@ -26,7 +26,34 @@ public class MainActivity extends  AppCompatActivity {
         fo_area=findViewById(R.id.txt_area);
         fo_hijo=findViewById(R.id.txt_hijos);
         fo_estado=findViewById(R.id.txt_estado);
+        fo_extras=findViewById(R.id.txt_horas);
+        fo_retraso=findViewById(R.id.txt_retrasos);
     }
+
+    public double determinarSueldo(String cargo){
+        double sueldo=0.00;
+        //String cargo=et_cargo.getText().toString();
+        if (cargo.equals("Administrativo")==true) {
+            sueldo=880.00;
+        }else if(cargo.equals("Docente")==true){
+
+            sueldo= 1000.00;
+        }
+        return sueldo;
+    }
+
+
+    public double subsidio(int numero){
+        double sub=0.00;
+
+        if(numero>0){
+            sub=numero*50;
+        }else{
+            sub=0;
+        }
+        return sub;
+    }
+
 
     public void registrar(View view){
         BDHelper admin=new BDHelper(this,"registro.db",null,1);
@@ -49,18 +76,18 @@ public class MainActivity extends  AppCompatActivity {
             fo_funcionario.setText("");
             fo_area.setText("");
             fo_cargo.setText("");
-            fo_hijo.setText("");
             fo_estado.setText("");
+            fo_total.setText(this.determinarSueldo(cargo)+"");
+            int numHijos=Integer.parseInt(hijo);
+
+
             bd.close();
         }else{
             Toast.makeText(this,"FAVOR INGRESAR TODOS LOS CAMPOS",Toast.LENGTH_SHORT).show();
         }
-
-
-
-
-
     }
+
+
 
 
 
