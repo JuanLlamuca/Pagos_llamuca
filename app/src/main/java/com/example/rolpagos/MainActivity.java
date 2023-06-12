@@ -28,67 +28,63 @@ public class MainActivity extends  AppCompatActivity {
         fo_estado=findViewById(R.id.txt_estado);
         fo_extras=findViewById(R.id.txt_horas);
         fo_retraso=findViewById(R.id.txt_retrasos);
+        fo_total = findViewById(R.id.txt_sueldo);
     }
 
-    public double determinarSueldo(String cargo){
+    public double determinarSueldo(String cargo,String retraso,int hijo,int extras){
         double sueldo=0.00;
         //String cargo=et_cargo.getText().toString();
         if (cargo.equals("Administrativo")==true) {
-            sueldo=880.00;
-        }else if(cargo.equals("Docente")==true){
+            if(retraso.equals("no")==true){
+                if(hijo==0){
+                    if(extras==0)
+                    sueldo=880.00;
+                }
 
-            sueldo= 1000.00;
+            }
+
+        }else if(cargo.equals("Docente")==true) {
+            if (retraso.equals("si") == true) {
+                if (hijo > 0) {
+                    if (extras > 0) {
+                        sueldo = (880.00 - 0.8) + (50 * hijo) + (12 * extras);
+                    }
+                }
+
+            }
         }
         return sueldo;
     }
 
-
-    public double subsidio(int numero){
-        double sub=0.00;
-
-        if(numero>0){
-            sub=numero*50;
-        }else{
-            sub=0;
-        }
-        return sub;
-    }
-
-
     public void registrar(View view){
-        BDHelper admin=new BDHelper(this,"registro.db",null,1);
-        SQLiteDatabase bd=admin.getWritableDatabase();
-        String funcionario=fo_funcionario.getText().toString();
-        String cargo=fo_cargo.getText().toString();
-        String area=fo_area.getText().toString();
-        String hijo=fo_hijo.getText().toString();
-        String estado=fo_estado.getText().toString();
+            BDHelper admin = new BDHelper(this, "registro.db", null, 1);
+            SQLiteDatabase bd = admin.getWritableDatabase();
+            String funcionario = fo_funcionario.getText().toString();
+            String cargo = fo_cargo.getText().toString();
+            String area = fo_area.getText().toString();
+            int hijo = Integer.parseInt(fo_hijo.getText().toString());
+            String estado = fo_estado.getText().toString();
+            String retraso = fo_retraso.getText().toString();
+            int extras = Integer.parseInt(fo_extras.getText().toString());
 
-        if(!funcionario.isEmpty() && !cargo.isEmpty() && !area.isEmpty() && !hijo.isEmpty() && !estado.isEmpty()){
-            ContentValues registro=new ContentValues();
-            registro.put("for_funcionario",funcionario);
-            registro.put("for_cargo",cargo);
-            registro.put("for_area",area);
-            registro.put("for_hijo",hijo);
-            registro.put("for_estado",estado);
-            bd.insert("tblFormulario",null,registro);
-            Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show();
-            fo_funcionario.setText("");
-            fo_area.setText("");
-            fo_cargo.setText("");
-            fo_estado.setText("");
-            fo_total.setText(this.determinarSueldo(cargo)+"");
-            int numHijos=Integer.parseInt(hijo);
-
-
-            bd.close();
-        }else{
-            Toast.makeText(this,"FAVOR INGRESAR TODOS LOS CAMPOS",Toast.LENGTH_SHORT).show();
+            if (!funcionario.isEmpty() && !cargo.isEmpty() && !area.isEmpty() && !estado.isEmpty()) {
+                ContentValues registro = new ContentValues();
+                registro.put("for_funcionario", funcionario);
+                registro.put("for_cargo", cargo);
+                registro.put("for_area", area);
+                registro.put("for_hijo", hijo);
+                registro.put("for_estado", estado);
+                bd.insert("tblFormulario", null, registro);
+                Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show();
+                fo_funcionario.setText("");
+                fo_area.setText("");
+                fo_cargo.setText("");
+                fo_estado.setText("");
+                fo_total.setText(this.determinarSueldo(cargo, retraso, extras, hijo) + "");
+                bd.close();
+            } else {
+                Toast.makeText(this, "FAVOR INGRESAR TODOS LOS CAMPOS", Toast.LENGTH_SHORT).show();
+            }
         }
-    }
-
-
-
-
 
 }
