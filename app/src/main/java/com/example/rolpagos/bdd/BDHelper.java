@@ -23,6 +23,7 @@ public class BDHelper extends SQLiteOpenHelper {
                 "for_hijos text NOT NULL," +
                 "for_civil text NOT NULL)");
 
+
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
